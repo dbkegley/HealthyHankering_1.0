@@ -60,6 +60,10 @@
             android:name=".Preference4Activity"
             android:label="@string/title_activity_preference4" >
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
     </application>
 
 </manifest>
