@@ -11,8 +11,71 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
         android:onClick="openPreference3"
-        android:text="@string/next" />
+        android:text="@string/next"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/subTasteLabel"
+        android:id="@+id/tasteSubLabel"
+        android:layout_gravity="center_horizontal|top"
+        android:paddingTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/tasteLabel"
+        android:id="@+id/tasteLabel"
+        android:layout_gravity="center_horizontal|top"
+        android:textSize="18pt"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="false" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tasteSubLabel"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bitterLabel"
+            android:id="@+id/bitterRadButton" />
+
+        <RadioButton
+            android:layout_width="104dp"
+            android:layout_height="wrap_content"
+            android:text="@string/saltyLabel"
+            android:id="@+id/saltyRadButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/savouryLabel"
+            android:id="@+id/savouryRadButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sourLabel"
+            android:id="@+id/sourRadButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sweetLabel"
+            android:id="@+id/sweetRadButton" />
+    </RadioGroup>
+
 </RelativeLayout>

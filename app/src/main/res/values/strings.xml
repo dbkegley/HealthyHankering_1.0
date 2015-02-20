@@ -13,5 +13,26 @@
     <string name="title_activity_gps">GPSActivity</string>
     <string name="title_activity_pedometer">PedometerActivity</string>
     <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="textureLabel">Texture</string>
+    <string name="crispyLabel">Crispy</string>
+    <string name="crunchyLabel">Crunchy</string>
+    <string name="chewylabel">Chewy</string>
+    <string name="softLabel">Soft</string>
+    <string name="liquidLabel">Liquid Based / Creamy</string>
+    <string name="subTextureLabel">Select A Texture</string>
+    <string name="tasteLabel">Taste</string>
+    <string name="subTasteLabel">Select A Taste</string>
+    <string name="sweetLabel">Sweet</string>
+    <string name="sourLabel">Sour</string>
+    <string name="saltyLabel">Salty</string>
+    <string name="bitterLabel">Bitter</string>
+    <string name="savouryLabel">Savoury</string>
+    <string name="spiceLabel">Spice</string>
+    <string name="subSpiceLabel">Select A Spice Level</string>
+    <string name="mildLabel">Mild</string>
+    <string name="mediumLabel">Medium</string>
+    <string name="hotLabel">Hot</string>
+    <string name="title_activity_preference4">Preference4Activity</string>
 
 </resources>

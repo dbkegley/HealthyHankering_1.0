@@ -56,6 +56,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="david.com.healthyhankering.HomeActivity" />
         </activity>
+        <activity
+            android:name=".Preference4Activity"
+            android:label="@string/title_activity_preference4" >
+        </activity>
     </application>
 
 </manifest>

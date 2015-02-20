@@ -4,11 +4,69 @@
     tools:context="david.com.healthyhankering.Preference1Activity" tools:ignore="MergeRootFrame"
     android:onClick="openPreference2">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/textureLabel"
+        android:id="@+id/textureLabel"
+        android:layout_gravity="center_horizontal|top"
+        android:textSize="18pt" />
+
+    <RadioGroup
+        android:layout_width="370dp"
+        android:layout_height="413dp"
+        android:layout_gravity="center"
+        android:id="@+id/textureRadGroup"
+        android:weightSum="1">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chewylabel"
+            android:id="@+id/chewyRadButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crispyLabel"
+            android:id="@+id/crispyRadButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crunchyLabel"
+            android:id="@+id/crunchyRadButton" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/softLabel"
+            android:id="@+id/softRadButton"
+            android:singleLine="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/liquidLabel"
+            android:id="@+id/liquidRadButton" />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/subTextureLabel"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal|top"
+        android:paddingTop="50dp" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next"
         android:id="@+id/button"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal|bottom"
         android:onClick="openPreference2" />
 </FrameLayout>
