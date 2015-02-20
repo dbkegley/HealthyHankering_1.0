@@ -1,5 +1,6 @@
 package david.com.healthyhankering;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -40,6 +41,21 @@ public class PedometerActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            //close this page
+            this.finish();
+
+            //only page left on stack is 'Home'
+            return true;
+        } else if (id == R.id.item_gps) {
+            //close this page and open gps
+            this.finish();
+
+            //start gps intent
+            Intent intent = new Intent(this, GPSActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item_pedometer) {
+            //do nothing, already on this page
             return true;
         }
 
