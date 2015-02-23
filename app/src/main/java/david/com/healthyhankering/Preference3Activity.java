@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Preference3Activity extends ActionBarActivity {
@@ -38,5 +39,10 @@ public class Preference3Activity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void openPreference4(View view) {
+        Intent intent = new Intent(this, Preference4Activity.class);
+        startActivity(intent);
     }
 }

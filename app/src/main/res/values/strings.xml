@@ -59,4 +59,9 @@
         <item>Zesty</item>
     </string-array>
 
+    <string name="title_activity_result">resultActivity</string>
+    <string name="resultLabel">Your Current Hankering Is..</string>
+    <string name="recipeName">Recipe Name</string>
+    <string name="reset">Find Another Hankering?</string>
+
 </resources>

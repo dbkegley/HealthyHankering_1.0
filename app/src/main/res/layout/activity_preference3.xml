@@ -34,7 +34,8 @@
         android:id="@+id/button3"
         android:text="@string/next"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="openPreference4" />
 
     <RadioGroup
         android:layout_width="fill_parent"

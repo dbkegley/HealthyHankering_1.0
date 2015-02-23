@@ -8,19 +8,19 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class Preference4Activity extends ActionBarActivity {
+public class resultActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preference4);
+        setContentView(R.layout.activity_result);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_preference4, menu);
+        getMenuInflater().inflate(R.menu.menu_result, menu);
         return true;
     }
 
@@ -38,8 +38,8 @@ public class Preference4Activity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void openResult(View view) {
-        Intent intent = new Intent(this, resultActivity.class);
+    public void openPreference1(View view) {
+        Intent intent = new Intent(this, Preference1Activity.class);
         startActivity(intent);
     }
 }

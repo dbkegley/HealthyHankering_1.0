@@ -64,6 +64,14 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+            android:name=".resultActivity"
+            android:label="@string/title_activity_result"
+            android:parentActivityName=".Preference4Activity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="david.com.healthyhankering.Preference4Activity" />
+        </activity>
     </application>
 
 </manifest>
