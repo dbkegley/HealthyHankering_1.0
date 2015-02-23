@@ -58,7 +58,7 @@
         <item>Warm</item>
         <item>Zesty</item>
     </string-array>
-
+    <string name="title_activity_preference4"></string>
     <string name="title_activity_result">resultActivity</string>
     <string name="resultLabel">Your Current Hankering Is..</string>
     <string name="recipeName">Recipe Name</string>
