@@ -1,8 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context="david.com.healthyhankering.Preference1Activity" tools:ignore="MergeRootFrame"
-    android:onClick="openPreference2">
+    tools:context="david.com.healthyhankering.Preference1Activity" tools:ignore="MergeRootFrame">
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,6 +11,15 @@
         android:id="@+id/textureLabel"
         android:layout_gravity="center_horizontal|top"
         android:textSize="18pt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/subTextureLabel"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal|top"
+        android:paddingTop="50dp" />
 
     <RadioGroup
         android:layout_width="370dp"
@@ -52,15 +60,6 @@
             android:id="@+id/liquidRadButton" />
 
     </RadioGroup>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/subTextureLabel"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal|top"
-        android:paddingTop="50dp" />
 
     <Button
         android:layout_width="wrap_content"
