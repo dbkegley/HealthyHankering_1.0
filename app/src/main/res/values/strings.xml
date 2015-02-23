@@ -13,7 +13,7 @@
     <string name="title_activity_gps">GPSActivity</string>
     <string name="title_activity_pedometer">PedometerActivity</string>
     <string name="next">Next</string>
-    <string name="back">Back</string>
+    <string name="submit">What am I Hankering?</string>
     <string name="textureLabel">Texture</string>
     <string name="crispyLabel">Crispy</string>
     <string name="crunchyLabel">Crunchy</string>
@@ -33,6 +33,35 @@
     <string name="mildLabel">Mild</string>
     <string name="mediumLabel">Medium</string>
     <string name="hotLabel">Hot</string>
-    <string name="title_activity_preference4">Preference4Activity</string>
+    <string name="flavorLabel">Flavor</string>
+    <string name="subFlavorLAbel">Select A Flavor</string>
+
+    <string-array name="flavor_array">
+        <item>BBQ</item>
+        <item>Cheesy</item>
+        <item>Chocolaty</item>
+        <item>Cold</item>
+        <item>Comfort</item>
+        <item>Dry</item>
+        <item>Floury</item>
+        <item>Fruity</item>
+        <item>Garlicky</item>
+        <item>Gingery</item>
+        <item>Grilled</item>
+        <item>Meaty</item>
+        <item>Nutty</item>
+        <item>Raw</item>
+        <item>Seasoned</item>
+        <item>Smokey</item>
+        <item>Tangy</item>
+        <item>Vanilla</item>
+        <item>Warm</item>
+        <item>Zesty</item>
+    </string-array>
+
+    <string name="title_activity_result">resultActivity</string>
+    <string name="resultLabel">Your Current Hankering Is..</string>
+    <string name="recipeName">Recipe Name</string>
+    <string name="reset">Find Another Hankering?</string>
 
 </resources>

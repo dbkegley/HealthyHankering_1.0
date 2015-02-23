@@ -4,14 +4,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="david.com.healthyhankering.Preference3Activity">
+    tools:context="david.com.healthyhankering.Preference4Activity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/spiceLabel"
-        android:id="@+id/spiceLabel"
+        android:text="@string/flavorLabel"
+        android:id="@+id/flavorLabel"
         android:layout_gravity="center_horizontal|top"
         android:textSize="18pt"
         android:layout_alignParentTop="true"
@@ -21,8 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/subSpiceLabel"
-        android:id="@+id/subSpiceLabel"
+        android:text="@string/subFlavorLAbel"
+        android:id="@+id/subFlavorLabel"
         android:layout_gravity="center_horizontal|top"
         android:paddingTop="50dp"
         android:layout_alignParentTop="true"
@@ -31,36 +31,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:text="@string/next"
+        android:text="@string/submit"
+        android:id="@+id/submit"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="openPreference4" />
+        android:onClick="openResult" />
 
-    <RadioGroup
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/button3"
-        android:layout_below="@+id/subSpiceLabel">
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mildLabel"
-            android:id="@+id/mildRadButton" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mediumLabel"
-            android:id="@+id/mediumRadButton" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hotLabel"
-            android:id="@+id/hotRadButton" />
-
-    </RadioGroup>
 </RelativeLayout>
