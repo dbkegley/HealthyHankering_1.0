@@ -5,11 +5,11 @@
     <string name="pedometer">Pedometer</string>
     <string name="gps">GPS</string>
     <string name="home">Home</string>
-    <string name="title_activity_preference1">Preference1Activity</string>
-    <string name="title_activity_preference2">Preference2Activity</string>
+    <string name="title_activity_preference1"></string>
+    <string name="title_activity_preference2"></string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_preference3">Preference3Activity</string>
+    <string name="title_activity_preference3"></string>
     <string name="title_activity_gps">GPSActivity</string>
     <string name="title_activity_pedometer">PedometerActivity</string>
     <string name="next">Next</string>
@@ -59,7 +59,7 @@
         <item>Zesty</item>
     </string-array>
     <string name="title_activity_preference4"></string>
-    <string name="title_activity_result">resultActivity</string>
+    <string name="title_activity_result"></string>
     <string name="resultLabel">Your Current Hankering Is..</string>
     <string name="recipeName">Recipe Name</string>
     <string name="reset">Find Another Hankering?</string>

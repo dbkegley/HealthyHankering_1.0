@@ -59,6 +59,9 @@
         <activity
             android:name=".Preference4Activity"
             android:label="@string/title_activity_preference4" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="david.com.healthyhankering.Preference3Activity" />
         </activity>
         <activity
             android:name=".SettingsActivity"
