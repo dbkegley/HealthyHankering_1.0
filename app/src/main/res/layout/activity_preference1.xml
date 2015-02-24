@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
     android:layout_width="match_parent" android:layout_height="match_parent"
     tools:context="david.com.healthyhankering.Preference1Activity" tools:ignore="MergeRootFrame">
@@ -10,23 +10,40 @@
         android:text="@string/textureLabel"
         android:id="@+id/textureLabel"
         android:layout_gravity="center_horizontal|top"
-        android:textSize="18pt" />
+        android:textSize="18pt"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/textureSubLabel"
+        android:layout_alignStart="@+id/textureSubLabel" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/subTextureLabel"
-        android:id="@+id/textView"
+        android:id="@+id/textureSubLabel"
         android:layout_gravity="center_horizontal|top"
-        android:paddingTop="50dp" />
+        android:paddingTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:id="@+id/btnNextToTaste"
+        android:layout_gravity="center_horizontal|bottom"
+        android:onClick="openPreference2"
+        android:layout_below="@+id/radGroupTexture"
+        android:layout_centerHorizontal="true" />
 
     <RadioGroup
-        android:layout_width="370dp"
+        android:layout_width="fill_parent"
         android:layout_height="413dp"
         android:layout_gravity="center"
-        android:id="@+id/textureRadGroup"
-        android:weightSum="1">
+        android:id="@+id/radGroupTexture"
+        android:weightSum="1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -61,11 +78,4 @@
 
     </RadioGroup>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
-        android:id="@+id/button"
-        android:layout_gravity="center_horizontal|bottom"
-        android:onClick="openPreference2" />
-</FrameLayout>
+</RelativeLayout>
