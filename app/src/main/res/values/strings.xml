@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">HealthyHankering</string>
+    <string name="home_title">Healthy Hankerings</string>
+    <string name="sub_home_note">Click The Logo To Start</string>
     <string name="pedometer">Pedometer</string>
     <string name="gps">GPS</string>
     <string name="home">Home</string>
@@ -34,30 +36,31 @@
     <string name="mediumLabel">Medium</string>
     <string name="hotLabel">Hot</string>
     <string name="flavorLabel">Flavor</string>
-    <string name="subFlavorLAbel">Select A Flavor</string>
+    <string name="subFlavorLabel">Select A Flavor</string>
 
-    <string-array name="flavor_array">
-        <item>BBQ</item>
-        <item>Cheesy</item>
-        <item>Chocolaty</item>
-        <item>Cold</item>
-        <item>Comfort</item>
-        <item>Dry</item>
-        <item>Floury</item>
-        <item>Fruity</item>
-        <item>Garlicky</item>
-        <item>Gingery</item>
-        <item>Grilled</item>
-        <item>Meaty</item>
-        <item>Nutty</item>
-        <item>Raw</item>
-        <item>Seasoned</item>
-        <item>Smokey</item>
-        <item>Tangy</item>
-        <item>Vanilla</item>
-        <item>Warm</item>
-        <item>Zesty</item>
-    </string-array>
+    <string name="BBQ">BBQ</string>
+    <string name="Cheesy">Cheesy</string>
+    <string name="Chocolaty">Chocolaty</string>
+    <string name="Cold">Cold</string>
+    <string name="Comfort">Comfort</string>
+    <string name="Dry">Dry</string>
+    <string name="Floury">Floury</string>
+    <string name="Fruity">Fruity</string>
+    <string name="Garlicky">Garlicky</string>
+    <string name="Gingery">Gingery</string>
+    <string name="Grilled">Grilled</string>
+    <string name="Meaty">Meaty</string>
+    <string name="Nutty">Nutty</string>
+    <string name="Raw">Raw</string>
+    <string name="Seasoned">Seasoned</string>
+    <string name="Smokey">Smokey</string>
+    <string name="Tangy">Tangy</string>
+    <string name="Vanilla">Vanilla</string>
+    <string name="Warm">Warm</string>
+    <string name="Zesty">Zesty</string>
+
+
+
     <string name="title_activity_preference4"></string>
     <string name="title_activity_result"></string>
     <string name="resultLabel">Your Current Hankering Is..</string>
