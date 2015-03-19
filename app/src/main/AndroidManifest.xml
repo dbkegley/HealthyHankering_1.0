@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Preference1Activity"
+            android:name=".TextureActivity"
             android:label="@string/title_activity_preference1"
             android:parentActivityName=".HomeActivity" >
             <meta-data
@@ -25,20 +25,20 @@
                 android:value="david.com.healthyhankering.HomeActivity" />
         </activity>
         <activity
-            android:name=".Preference2Activity"
+            android:name=".TasteActivity"
             android:label="@string/title_activity_preference2"
-            android:parentActivityName=".Preference1Activity" >
+            android:parentActivityName=".TextureActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="david.com.healthyhankering.Preference1Activity" />
+                android:value=".TextureActivity" />
         </activity>
         <activity
-            android:name=".Preference3Activity"
+            android:name=".SpiceActivity"
             android:label="@string/title_activity_preference3"
-            android:parentActivityName=".Preference2Activity" >
+            android:parentActivityName=".TasteActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="david.com.healthyhankering.Preference2Activity" />
+                android:value=".TasteActivity" />
         </activity>
         <activity
             android:name=".GPSActivity"
@@ -57,11 +57,11 @@
                 android:value="david.com.healthyhankering.HomeActivity" />
         </activity>
         <activity
-            android:name=".Preference4Activity"
+            android:name=".FlavorActivity"
             android:label="@string/title_activity_preference4" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="david.com.healthyhankering.Preference3Activity" />
+                android:value=".SpiceActivity" />
         </activity>
         <activity
             android:name=".SettingsActivity"
@@ -70,10 +70,10 @@
         <activity
             android:name=".resultActivity"
             android:label="@string/title_activity_result"
-            android:parentActivityName=".Preference4Activity" >
+            android:parentActivityName=".FlavorActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="david.com.healthyhankering.Preference4Activity" />
+                android:value=".FlavorActivity" />
         </activity>
     </application>
 

@@ -39,7 +39,7 @@ public class resultActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     public void openPreference1(View view) {
-        Intent intent = new Intent(this, Preference1Activity.class);
+        Intent intent = new Intent(this, TextureActivity.class);
         startActivity(intent);
     }
 }

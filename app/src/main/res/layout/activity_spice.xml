@@ -4,26 +4,25 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="david.com.healthyhankering.Preference2Activity">
+    tools:context="david.com.healthyhankering.SpiceActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/tasteLabel"
-        android:id="@+id/tasteLabel"
+        android:text="@string/spiceLabel"
+        android:id="@+id/spiceLabel"
         android:layout_gravity="center_horizontal|top"
         android:textSize="18pt"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentStart="false" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/subTasteLabel"
-        android:id="@+id/tasteSubLabel"
+        android:text="@string/subSpiceLabel"
+        android:id="@+id/subSpiceLabel"
         android:layout_gravity="center_horizontal|top"
         android:paddingTop="50dp"
         android:layout_alignParentTop="true"
@@ -32,50 +31,48 @@
     <RadioGroup
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/tasteSubLabel"
-        android:layout_above="@+id/btnNextToSpice"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/radGroupTaste">
+        android:layout_below="@+id/subSpiceLabel"
+        android:layout_above="@+id/radGroupFlavor"
+        android:id="@+id/radGroupSpice">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bitterLabel"
-            android:id="@+id/bitterRadButton" />
-
-        <RadioButton
-            android:layout_width="104dp"
-            android:layout_height="wrap_content"
-            android:text="@string/saltyLabel"
-            android:id="@+id/saltyRadButton" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/savouryLabel"
-            android:id="@+id/savouryRadButton" />
+            android:text="@string/mildLabel"
+            android:id="@+id/mildRadButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="0"
+            android:layout_column="0" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sourLabel"
-            android:id="@+id/sourRadButton" />
+            android:text="@string/mediumLabel"
+            android:id="@+id/mediumRadButton"
+            android:layout_row="0"
+            android:layout_column="1" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sweetLabel"
-            android:id="@+id/sweetRadButton" />
+            android:text="@string/hotLabel"
+            android:id="@+id/hotRadButton"
+            android:layout_above="@+id/subSpiceLabel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_row="0"
+            android:layout_column="2" />
     </RadioGroup>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnNextToSpice"
-        android:onClick="openPreference3"
+        android:id="@+id/radGroupFlavor"
         android:text="@string/next"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="openPreference4" />
 
 </RelativeLayout>

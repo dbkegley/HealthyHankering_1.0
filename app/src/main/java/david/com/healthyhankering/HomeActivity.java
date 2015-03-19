@@ -52,7 +52,7 @@ public class HomeActivity extends ActionBarActivity {
     }
 
     public void openPreference1(View view) {
-        Intent intent = new Intent(this, Preference1Activity.class);
+        Intent intent = new Intent(this, TextureActivity.class);
         startActivity(intent);
     }
 }

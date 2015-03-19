@@ -8,19 +8,19 @@ import android.view.MenuItem;
 import android.view.View;
 
 
-public class Preference2Activity extends ActionBarActivity {
+public class TasteActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preference2);
+        setContentView(R.layout.activity_taste);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_preference2, menu);
+        getMenuInflater().inflate(R.menu.menu_taste, menu);
         return true;
     }
 
@@ -42,7 +42,7 @@ public class Preference2Activity extends ActionBarActivity {
     }
 
     public void openPreference3(View view) {
-        Intent intent = new Intent(this, Preference3Activity.class);
+        Intent intent = new Intent(this, SpiceActivity.class);
         startActivity(intent);
     }
 }
