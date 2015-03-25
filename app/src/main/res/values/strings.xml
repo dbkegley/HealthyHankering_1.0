@@ -37,7 +37,6 @@
     <string name="hotLabel">Hot</string>
     <string name="flavorLabel">Flavor</string>
     <string name="subFlavorLabel">Select A Flavor</string>
-
     <string name="BBQ">BBQ</string>
     <string name="Cheesy">Cheesy</string>
     <string name="Chocolaty">Chocolaty</string>
@@ -58,13 +57,60 @@
     <string name="Vanilla">Vanilla</string>
     <string name="Warm">Warm</string>
     <string name="Zesty">Zesty</string>
-
-
-
     <string name="title_activity_preference4"></string>
     <string name="title_activity_result"></string>
     <string name="resultLabel">Your Current Hankering Is..</string>
     <string name="recipeName">Recipe Name</string>
     <string name="reset">Find Another Hankering?</string>
+
+    <string name="title_activity_cuisine">CuisineActivity</string>
+    <string name="cuisineLabel">Cuisine</string>
+    <string name="subCuisineLabel">Select A Cuisine</string>
+    <string name="Mexican">Mexican</string>
+    <string name="American">American</string>
+    <string name="KidFriendly">Kid-Friendly</string>
+    <string name="Asian">Asian</string>
+    <string name="Italian">Italian</string>
+    <string name="Barbecue">Barbecue</string>
+    <string name="French">French</string>
+    <string name="Southwestern">Southwestern</string>
+    <string name="Southern">Southern</string>
+    <string name="Indian">Indian</string>
+    <string name="English">English</string>
+    <string name="Chinese">Chinese</string>
+    <string name="Mediterranean">Mediterranean</string>
+    <string name="Spanish">Spanish</string>
+    <string name="Greek">Greek</string>
+    <string name="Cajun">Cajun</string>
+    <string name="Thai">Thai</string>
+    <string name="Irish">Irish</string>
+    <string name="German">German</string>
+    <string name="Japanese">Japanese</string>
+    <string name="Moroccan">Moroccan</string>
+    <string name="Cuban">Cuban</string>
+    <string name="Hawaiian">Hawaiian</string>
+    <string name="Portuguese">Portuguese</string>
+    <string name="Hungarian">Hungarian</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </resources>

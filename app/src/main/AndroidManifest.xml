@@ -75,6 +75,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".FlavorActivity" />
         </activity>
+        <activity
+            android:name=".CuisineActivity"
+            android:label="@string/title_activity_cuisine" >
+        </activity>
     </application>
 
 </manifest>
