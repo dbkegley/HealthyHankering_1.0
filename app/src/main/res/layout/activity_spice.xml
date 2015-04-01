@@ -8,6 +8,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="david.com.healthyhankering.SpiceActivity">
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:layout_above="@+id/radGroupSpice"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/fruit"
+        android:scaleType="centerCrop"
+        android:layout_alignParentTop="true" />
+
     <TextView
         android:id="@+id/spiceLabel"
         android:layout_width="wrap_content"
@@ -17,7 +27,8 @@
         android:layout_gravity="center_horizontal|top"
         android:text="@string/spiceLabel"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="18pt" />
+        android:textSize="18pt"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/subSpiceLabel"
@@ -28,7 +39,8 @@
         android:layout_gravity="center_horizontal|top"
         android:paddingTop="50dp"
         android:text="@string/subSpiceLabel"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
 
     <RadioGroup
         android:id="@+id/radGroupSpice"

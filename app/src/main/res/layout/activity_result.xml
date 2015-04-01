@@ -8,10 +8,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="david.com.healthyhankering.resultActivity">
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView4"
+        android:src="@drawable/fruit"
+        android:scaleType="centerCrop" />
+
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:id="@+id/frameLayout">
 
         <TextView
             android:id="@+id/textView2"
@@ -19,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|top"
             android:text="@string/resultLabel"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/reset"
@@ -28,5 +37,21 @@
             android:layout_gravity="center_horizontal|bottom"
             android:onClick="openPreference1"
             android:text="@string/reset" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="375dp"
+            android:text="text: "
+            android:id="@+id/textView"
+            android:layout_gravity="top"
+            android:layout_marginTop="50dp" />
+
+        <ProgressBar
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="50dp" />
     </FrameLayout>
+
 </RelativeLayout>

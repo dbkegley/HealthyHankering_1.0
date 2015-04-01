@@ -9,6 +9,16 @@
     tools:context="david.com.healthyhankering.TasteActivity"
     android:clickable="false">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/fruit"
+        android:scaleType="centerCrop"
+        android:layout_above="@+id/radGroupTaste" />
+
     <TextView
         android:id="@+id/tasteLabel"
         android:layout_width="wrap_content"
@@ -19,7 +29,8 @@
         android:layout_gravity="center_horizontal|top"
         android:text="@string/tasteLabel"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="18pt" />
+        android:textSize="18pt"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/tasteSubLabel"
@@ -30,7 +41,8 @@
         android:layout_gravity="center_horizontal|top"
         android:paddingTop="50dp"
         android:text="@string/subTasteLabel"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
 
     <RadioGroup
         android:id="@+id/radGroupTaste"

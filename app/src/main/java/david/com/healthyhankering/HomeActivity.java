@@ -53,8 +53,11 @@ public class HomeActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
     public void openPreference1(View view) {
         Intent intent = new Intent(this, TasteActivity.class);
         startActivity(intent);
+
     }
 }

@@ -3,13 +3,16 @@ package david.com.healthyhankering;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.ActionBarActivity;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 public class CuisineActivity extends ActionBarActivity {
@@ -42,10 +45,23 @@ public class CuisineActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    /* method for checking the network connection */
+    public boolean checkConnection() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public void openResult(View view) {
         RadioGroup group = (RadioGroup) findViewById(R.id.radGroupCuisine);
         int selectedId = group.getCheckedRadioButtonId();
         RadioButton radioCuisine = null;
+
         //set Default to Barbecue if no radio checked to prevent crash
         if(selectedId == -1)
             radioCuisine = (RadioButton) findViewById(R.id.radButtonBarbecue);
@@ -60,7 +76,15 @@ public class CuisineActivity extends ActionBarActivity {
         editor.putString("CUISINE",cuisine);
         editor.commit();
 
-        Intent intent = new Intent(this, resultActivity.class);
-        startActivity(intent);
+        /* check network connection before going to the results page */
+        if (checkConnection()) {
+
+            Intent intent = new Intent(this, resultActivity.class);
+            startActivity(intent);
+
+        } else {
+            Toast.makeText(this, "Unable to connect to network", Toast.LENGTH_LONG).show();
+        }
+
     }
 }

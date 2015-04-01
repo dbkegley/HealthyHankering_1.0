@@ -8,6 +8,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="david.com.healthyhankering.CuisineActivity">
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/fruit"
+        android:scaleType="centerCrop"
+        android:layout_alignBottom="@+id/cuisineSubLabel" />
+
     <TextView
         android:id="@+id/cuisineLabel"
         android:layout_width="wrap_content"
@@ -17,7 +27,8 @@
         android:layout_gravity="center_horizontal|top"
         android:text="@string/cuisineLabel"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="18pt" />
+        android:textSize="18pt"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/cuisineSubLabel"
@@ -29,7 +40,8 @@
         android:paddingTop="50dp"
         android:text="@string/subCuisineLabel"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textAlignment="textStart" />
+        android:textAlignment="textStart"
+        android:textColor="@android:color/white" />
 
     <ScrollView
         android:layout_width="wrap_content"
