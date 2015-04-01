@@ -26,8 +26,8 @@ public class HomeActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // automatically handle clicks on the Home/Up buttonbackground, so long
+        // as you specify buttonbackground parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -43,7 +43,7 @@ public class HomeActivity extends ActionBarActivity {
             return true;
         } else if (id == R.id.item_pedometer) {
             //start pedometer intent
-            Intent intent = new Intent(this, PedometerActivity.class);
+            Intent intent = new Intent(this, CameraActivity.class);
             startActivity(intent);
             return true;
         }
@@ -52,7 +52,7 @@ public class HomeActivity extends ActionBarActivity {
     }
 
     public void openPreference1(View view) {
-        Intent intent = new Intent(this, TextureActivity.class);
+        Intent intent = new Intent(this, TasteActivity.class);
         startActivity(intent);
     }
 }
