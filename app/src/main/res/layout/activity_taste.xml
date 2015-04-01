@@ -41,7 +41,7 @@
         android:layout_below="@+id/tasteSubLabel"
         android:layout_alignRight="@+id/tasteSubLabel"
         android:layout_alignEnd="@+id/tasteSubLabel"
-        android:ori>
+        >
 
         <RadioButton
             android:id="@+id/bitterRadButton"

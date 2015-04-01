@@ -1,11 +1,15 @@
 package david.com.healthyhankering;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 
 public class SpiceActivity extends ActionBarActivity {
@@ -42,6 +46,24 @@ public class SpiceActivity extends ActionBarActivity {
     }
 
     public void openPreference4(View view) {
+
+        RadioGroup group = (RadioGroup) findViewById(R.id.radGroupSpice);
+        int selectedId = group.getCheckedRadioButtonId();
+        RadioButton radioSpice = null;
+        //set Default to Mild if no radio checked to prevent crash
+        if(selectedId == -1)
+            radioSpice = (RadioButton) findViewById(R.id.mildRadButton);
+        else
+            radioSpice = (RadioButton) findViewById(selectedId);
+
+        String spice = radioSpice.getText().toString();
+
+
+        SharedPreferences sharedPref = getSharedPreferences(HomeActivity.PREFS, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("SPICE",spice);
+        editor.commit();
+
         Intent intent = new Intent(this, CuisineActivity.class);
         startActivity(intent);
     }

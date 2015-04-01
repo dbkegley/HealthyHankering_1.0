@@ -41,7 +41,8 @@
         android:layout_below="@+id/cuisineSubLabel"
         android:baselineAligned="false"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:id="@+id/radGroupCuisine">
 
         <LinearLayout
             android:layout_width="0dp"
