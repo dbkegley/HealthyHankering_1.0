@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class PedometerActivity extends ActionBarActivity {
+public class CameraActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +28,15 @@ public class PedometerActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_pedometer, menu);
+        getMenuInflater().inflate(R.menu.menu_camera, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // automatically handle clicks on the Home/Up buttonbackground, so long
+        // as you specify buttonbackground parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -63,7 +63,7 @@ public class PedometerActivity extends ActionBarActivity {
     }
 
     /**
-     * A placeholder fragment containing a simple view.
+     * A placeholder fragment containing buttonbackground simple view.
      */
     public static class PlaceholderFragment extends Fragment {
 
@@ -73,7 +73,7 @@ public class PedometerActivity extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_pedometer, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_camera, container, false);
             return rootView;
         }
     }

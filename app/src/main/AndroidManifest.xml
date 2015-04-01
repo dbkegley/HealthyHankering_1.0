@@ -17,20 +17,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TextureActivity"
-            android:label="@string/title_activity_preference1"
+            android:name=".TasteActivity"
+            android:label="@string/title_activity_preference2"
             android:parentActivityName=".HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="david.com.healthyhankering.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".TasteActivity"
-            android:label="@string/title_activity_preference2"
-            android:parentActivityName=".TextureActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".TextureActivity" />
+                android:value=".HomeActivity" />
         </activity>
         <activity
             android:name=".SpiceActivity"
@@ -49,19 +41,12 @@
                 android:value="david.com.healthyhankering.HomeActivity" />
         </activity>
         <activity
-            android:name=".PedometerActivity"
+            android:name=".CameraActivity"
             android:label="@string/title_activity_pedometer"
             android:parentActivityName=".HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="david.com.healthyhankering.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".FlavorActivity"
-            android:label="@string/title_activity_preference4" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".SpiceActivity" />
         </activity>
         <activity
             android:name=".SettingsActivity"
@@ -70,14 +55,18 @@
         <activity
             android:name=".resultActivity"
             android:label="@string/title_activity_result"
-            android:parentActivityName=".FlavorActivity" >
+            android:parentActivityName=".CuisineActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".FlavorActivity" />
+                android:value=".CuisineActivity" />
         </activity>
         <activity
             android:name=".CuisineActivity"
-            android:label="@string/title_activity_cuisine" >
+            android:label="@string/title_activity_cuisine"
+            android:parentActivityName=".SpiceActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".SpiceActivity" />
         </activity>
     </application>
 

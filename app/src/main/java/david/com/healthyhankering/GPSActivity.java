@@ -35,8 +35,8 @@ public class GPSActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // automatically handle clicks on the Home/Up buttonbackground, so long
+        // as you specify buttonbackground parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -53,7 +53,7 @@ public class GPSActivity extends ActionBarActivity {
             this.finish();
 
             //start pedometer intent
-            Intent intent = new Intent(this, PedometerActivity.class);
+            Intent intent = new Intent(this, CameraActivity.class);
             startActivity(intent);
             return true;
         }
@@ -62,7 +62,7 @@ public class GPSActivity extends ActionBarActivity {
     }
 
     /**
-     * A placeholder fragment containing a simple view.
+     * A placeholder fragment containing buttonbackground simple view.
      */
     public static class PlaceholderFragment extends Fragment {
 

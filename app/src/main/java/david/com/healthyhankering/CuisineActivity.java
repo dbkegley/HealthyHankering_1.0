@@ -1,9 +1,11 @@
 package david.com.healthyhankering;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class CuisineActivity extends ActionBarActivity {
@@ -25,8 +27,8 @@ public class CuisineActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+        // automatically handle clicks on the Home/Up buttonbackground, so long
+        // as you specify buttonbackground parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -35,5 +37,9 @@ public class CuisineActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void openResult(View view) {
+        Intent intent = new Intent(this, resultActivity.class);
+        startActivity(intent);
     }
 }
