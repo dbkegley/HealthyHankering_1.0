@@ -9,6 +9,8 @@ import android.view.View;
 
 public class HomeActivity extends ActionBarActivity {
 
+    public static final String PREFS = "david.com.healthyhankering";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.content.SharedPreferences;
+import android.content.Context;
+import android.widget.TextView;
 
 
 public class resultActivity extends ActionBarActivity {
@@ -14,7 +17,21 @@ public class resultActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+
+        SharedPreferences prefs = getSharedPreferences(HomeActivity.PREFS, Context.MODE_PRIVATE);
+        String tasteText = prefs.getString("TASTE","DEFAULT VALUE");
+        String spiceText = prefs.getString("SPICE","DEFAULT VALUE");
+        String cuisineText = prefs.getString("CUISINE","DEFAULT VALUE");
+
+        String summary = tasteText + "\n" + spiceText + "\n" + cuisineText;
+
+        // Create the text view
+        TextView textView = new TextView(this);
+        textView.setTextSize(20);
+        textView.setText(summary);
+
+        // Set the text view as the activity layout
+        setContentView(textView);
     }
 
 

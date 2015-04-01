@@ -6,6 +6,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.content.SharedPreferences;
+import android.content.Context;
+import android.widget.RadioGroup;
+import android.widget.RadioButton;
 
 
 public class TasteActivity extends ActionBarActivity {
@@ -41,7 +45,28 @@ public class TasteActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
     public void openPreference3(View view) {
+
+        RadioGroup group = (RadioGroup) findViewById(R.id.radGroupTaste);
+        int selectedId = group.getCheckedRadioButtonId();
+        RadioButton radioTaste = null;
+        //set Default to Sweet if no radio checked to prevent crash
+        if(selectedId == -1)
+            radioTaste = (RadioButton) findViewById(R.id.sweetRadButton);
+        else
+            radioTaste = (RadioButton) findViewById(selectedId);
+
+        String taste = radioTaste.getText().toString();
+
+
+        SharedPreferences sharedPref = getSharedPreferences(HomeActivity.PREFS, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("TASTE",taste);
+        editor.commit();
+
+
         Intent intent = new Intent(this, SpiceActivity.class);
         startActivity(intent);
     }
