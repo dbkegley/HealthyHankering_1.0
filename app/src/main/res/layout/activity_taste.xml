@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="david.com.healthyhankering.TasteActivity">
+    tools:context="david.com.healthyhankering.TasteActivity"
+    android:clickable="false">
 
     <TextView
         android:id="@+id/tasteLabel"
@@ -41,7 +42,7 @@
         android:layout_below="@+id/tasteSubLabel"
         android:layout_alignRight="@+id/tasteSubLabel"
         android:layout_alignEnd="@+id/tasteSubLabel"
-        android:ori>
+        >
 
         <RadioButton
             android:id="@+id/bitterRadButton"

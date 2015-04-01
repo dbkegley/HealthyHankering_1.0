@@ -31,24 +31,29 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textAlignment="textStart" />
 
-    <RadioGroup
-        android:layout_width="fill_parent"
+    <ScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:id="@+id/scrollView"
+        android:layout_above="@+id/button"
         android:layout_below="@+id/cuisineSubLabel"
-        android:baselineAligned="false"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <RadioGroup
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1">
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/cuisineSubLabel"
+            android:baselineAligned="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/radGroupCuisine">
 
             <RadioButton
                 android:id="@+id/radButtonBarbecue"
@@ -64,9 +69,9 @@
                 android:id="@+id/radButtonCajun"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="13"
+
                 android:layout_gravity="center"
-                android:layout_row="1"
+
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/Cajun"
@@ -77,9 +82,9 @@
                 android:id="@+id/radButtonChinese"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="0"
+
                 android:layout_gravity="center"
-                android:layout_row="2"
+
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/Chinese"
@@ -90,9 +95,9 @@
                 android:id="@+id/radButtonCuban"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="13"
+
                 android:layout_gravity="center"
-                android:layout_row="2"
+
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/Cuban"
@@ -103,9 +108,9 @@
                 android:id="@+id/radButtonEnglish"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="0"
+
                 android:layout_gravity="center"
-                android:layout_row="3"
+
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/English"
@@ -116,9 +121,9 @@
                 android:id="@+id/radButtonFrench"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="13"
+
                 android:layout_gravity="center"
-                android:layout_row="3"
+
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/French"
@@ -129,9 +134,9 @@
                 android:id="@+id/radButtonGerman"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="0"
+
                 android:layout_gravity="center"
-                android:layout_row="4"
+
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/German"
@@ -142,9 +147,9 @@
                 android:id="@+id/radButtonGreek"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="13"
+
                 android:layout_gravity="center"
-                android:layout_row="4"
+
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/Greek"
@@ -155,9 +160,8 @@
                 android:id="@+id/radButtonHawaiian"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="0"
+
                 android:layout_gravity="center"
-                android:layout_row="5"
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/Hawaiian"
@@ -168,9 +172,7 @@
                 android:id="@+id/radButtonHungarian"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="13"
                 android:layout_gravity="center"
-                android:layout_row="5"
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/Hungarian"
@@ -181,9 +183,7 @@
                 android:id="@+id/radButtonIndian"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="0"
                 android:layout_gravity="center"
-                android:layout_row="6"
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/Indian"
@@ -194,46 +194,13 @@
                 android:id="@+id/radButtonIrish"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="13"
                 android:layout_gravity="center"
-                android:layout_row="6"
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/Irish"
                 android:textAlignment="center"
                 android:gravity="center" />
 
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1">
-            <RadioButton
-                android:id="@+id/radButtonItalian"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:background="@drawable/buttonbackground"
-                android:button="@android:color/transparent"
-                android:text="@string/Italian"
-                android:textAlignment="center"
-                android:gravity="center" />
-            <RadioButton
-                android:id="@+id/radButtonJapanes"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:background="@drawable/buttonbackground"
-                android:button="@android:color/transparent"
-                android:text="@string/Japanese"
-                android:textAlignment="center"
-                android:gravity="center" />
             <RadioButton
                 android:id="@+id/radButtonKids"
                 android:layout_width="fill_parent"
@@ -242,6 +209,94 @@
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/KidFriendly"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/radButtonAsian"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:button="@android:color/transparent"
+                android:text="@string/Asian"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/radButtonSouther"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:button="@android:color/transparent"
+                android:text="@string/Southern"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/radButtonMexican"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:button="@android:color/transparent"
+                android:text="@string/Mexican"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/radButtonSpanish"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:button="@android:color/transparent"
+                android:text="@string/Spanish"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/radButtonThai"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:button="@android:color/transparent"
+                android:text="@string/Thai"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/radButtonSouthwestern"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:button="@android:color/transparent"
+                android:text="@string/Southwestern"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/radButtonPortuguese"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:button="@android:color/transparent"
+                android:text="@string/Portuguese"
+                android:textAlignment="center"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/radButtonJapanes"
+                android:layout_width="fill_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:background="@drawable/buttonbackground"
+                android:button="@android:color/transparent"
+                android:text="@string/Japanese"
                 android:textAlignment="center"
                 android:gravity="center" />
 
@@ -257,25 +312,10 @@
                 android:gravity="center" />
 
             <RadioButton
-                android:id="@+id/radButtonMexican"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_column="0"
-                android:layout_gravity="center"
-                android:layout_row="9"
-                android:background="@drawable/buttonbackground"
-                android:button="@android:color/transparent"
-                android:text="@string/Mexican"
-                android:textAlignment="center"
-                android:gravity="center" />
-
-            <RadioButton
                 android:id="@+id/radButtonMoroccan"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="13"
                 android:layout_gravity="center"
-                android:layout_row="9"
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
                 android:text="@string/Moroccan"
@@ -283,85 +323,18 @@
                 android:gravity="center" />
 
             <RadioButton
-                android:id="@+id/radButtonPortuguese"
+                android:id="@+id/radButtonItalian"
                 android:layout_width="fill_parent"
                 android:layout_height="30dp"
-                android:layout_column="0"
                 android:layout_gravity="center"
-                android:layout_row="10"
                 android:background="@drawable/buttonbackground"
                 android:button="@android:color/transparent"
-                android:text="@string/Portuguese"
+                android:text="@string/Italian"
                 android:textAlignment="center"
                 android:gravity="center" />
 
-            <RadioButton
-                android:id="@+id/radButtonSouther"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_column="13"
-                android:layout_gravity="center"
-                android:layout_row="10"
-                android:background="@drawable/buttonbackground"
-                android:button="@android:color/transparent"
-                android:text="@string/Southern"
-                android:textAlignment="center"
-                android:gravity="center" />
-
-            <RadioButton
-                android:id="@+id/radButtonSouthwestern"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_column="0"
-                android:layout_gravity="center"
-                android:layout_row="11"
-                android:background="@drawable/buttonbackground"
-                android:button="@android:color/transparent"
-                android:text="@string/Southwestern"
-                android:textAlignment="center"
-                android:gravity="center" />
-
-            <RadioButton
-                android:id="@+id/radButtonSpanish"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_column="13"
-                android:layout_gravity="center"
-                android:layout_row="11"
-                android:background="@drawable/buttonbackground"
-                android:button="@android:color/transparent"
-                android:text="@string/Spanish"
-                android:textAlignment="center"
-                android:gravity="center" />
-
-            <RadioButton
-                android:id="@+id/radButtonThai"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_column="0"
-                android:layout_gravity="center"
-                android:layout_row="12"
-                android:background="@drawable/buttonbackground"
-                android:button="@android:color/transparent"
-                android:text="@string/Thai"
-                android:textAlignment="center"
-                android:gravity="center" />
-
-            <RadioButton
-                android:id="@+id/radButtonAsian"
-                android:layout_width="fill_parent"
-                android:layout_height="30dp"
-                android:layout_column="13"
-                android:layout_gravity="center"
-                android:layout_row="0"
-                android:background="@drawable/buttonbackground"
-                android:button="@android:color/transparent"
-                android:text="@string/Asian"
-                android:textAlignment="center"
-                android:gravity="center" />
-        </LinearLayout>
-
-    </RadioGroup>
+        </RadioGroup>
+    </ScrollView>
 
     <Button
         android:id="@+id/button"
