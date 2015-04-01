@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">HealthyHankering</string>
+    <string name="app_name"></string>
     <string name="home_title">Healthy Hankerings</string>
     <string name="sub_home_note">Click The Logo To Start</string>
     <string name="pedometer">Pedometer</string>
@@ -63,7 +63,7 @@
     <string name="recipeName">Recipe Name</string>
     <string name="reset">Find Another Hankering?</string>
 
-    <string name="title_activity_cuisine">CuisineActivity</string>
+    <string name="title_activity_cuisine"></string>
     <string name="cuisineLabel">Cuisine</string>
     <string name="subCuisineLabel">Select A Cuisine</string>
     <string name="Mexican">Mexican</string>
