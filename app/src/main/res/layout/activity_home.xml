@@ -13,6 +13,7 @@
         android:layout_height="fill_parent"
         android:layout_centerHorizontal="true">
 
+
         <TextView
             android:id="@+id/titleHH"
             android:layout_width="wrap_content"
@@ -20,16 +21,8 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/home_title"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="18pt" />
-
-        <TextView
-            android:id="@+id/subTitleHH"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:layout_marginTop="100dp"
-            android:text="@string/sub_home_note"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textSize="18pt"
+            android:gravity="center"/>
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -39,6 +32,15 @@
             android:contentDescription="Start choosing food"
             android:onClick="openPreference1"
             android:src="@drawable/healthy_hankering_logo_big" />
+
+        <TextView
+            android:id="@+id/subTitleHH"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="100dp"
+            android:text="@string/sub_home_note"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </FrameLayout>
 </RelativeLayout>
