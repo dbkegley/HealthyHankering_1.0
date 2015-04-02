@@ -1,5 +1,7 @@
 package david.com.healthyhankering;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by dbkegley on 4/1/15.
  */
@@ -8,6 +10,7 @@ public class Recipe {
     private String id;
     private String recipeName;
     private String imageURL;
+    private Bitmap bitmap;
 
     public Recipe() {
         id = "";
@@ -39,4 +42,11 @@ public class Recipe {
         this.imageURL = imageURL;
     }
 
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
 }

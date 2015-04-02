@@ -4,10 +4,16 @@ package david.com.healthyhankering;
  * Created by dbkegley on 4/1/15.
  */
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,8 +33,31 @@ public class RecipeParser {
 
                 //set recipe attributes
                 recipe.setRecipeId(obj.getString("id"));
-                //recipe.setRecipeName(obj.getString("recipeName"));
-                //recipe.setImageURL(obj.getString(""));
+                recipe.setRecipeName(obj.getString("recipeName"));
+
+                //set the url
+                //recipe.setImageURL(obj.getString("smallImageUrls"));
+
+                //this might work?
+                JSONArray imageURLArray = obj.getJSONArray("smallImageUrls");
+                String url = imageURLArray.get(0).toString();
+
+                //debug printing
+                System.out.println("IMAGE URL: " + url);
+                Log.i("url", "URL is: " + url);
+
+
+                recipe.setImageURL(url);
+
+                try {
+                    String imageURL = recipe.getImageURL();
+                    InputStream in = (InputStream) new URL(imageURL).getContent();
+                    Bitmap bitmap = BitmapFactory.decodeStream(in);
+                    recipe.setBitmap(bitmap);
+                    in.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
                 recipeList.add(recipe);
             }
