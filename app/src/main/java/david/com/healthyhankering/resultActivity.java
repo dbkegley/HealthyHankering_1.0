@@ -1,13 +1,16 @@
 package david.com.healthyhankering;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,9 +21,7 @@ public class resultActivity extends ActionBarActivity {
     private final String KEY = "db97c8d9e96c47c830e44e14d611d50e";
     private final String ID = "9cff8a56";
 
-    //ScrollView scrollView;
-    ImageView recipeImageView;
-    TextView recipeNameTextView;
+    TableLayout recipeTableView;
     List<Recipe> recipes;
     List<MyTask> tasks;
 
@@ -29,15 +30,22 @@ public class resultActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        //scrollView = (ScrollView) findViewById(R.id.scrollView);
-        //scrollView.setMovementMethod(new ScrollingMovementMethod());
+        //instantiate tableview by id
+        recipeTableView = (TableLayout) findViewById(R.id.recipeTableView);
 
-        recipeImageView = (ImageView) findViewById(R.id.recipeImageView);
-        recipeNameTextView = (TextView) findViewById(R.id.recipeNameTextView);
-
+        //instantiate tasks and recipe lists as empty arraylists
         tasks = new ArrayList<>();
+        recipes = new ArrayList<>();
 
-        requestRecipes("http://api.yummly.com/v1/api/recipes?_app_id=" + ID + "&_app_key=" + KEY + "&q=onion+soup&requirePictures=true");
+        //get shared preferences for user selections
+        SharedPreferences sharedPref = getSharedPreferences(HomeActivity.PREFS, Context.MODE_PRIVATE);
+        String taste = sharedPref.getString("TASTE", "");
+        String spice = sharedPref.getString("SPICE", "");
+        String cuisine = sharedPref.getString("CUISINE", "");
+
+        //request all recipes that meet the specifications
+        requestRecipes("http://api.yummly.com/v1/api/recipes?_app_id=" + ID + "&_app_key=" + KEY + "&q=" + taste +
+                "+" + spice + "+" + cuisine + "&requirePictures=true");
     }
 
     @Override
@@ -67,26 +75,44 @@ public class resultActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    protected void updateDisplay(Recipe selectedRecipe) {
-        recipeNameTextView.setText(selectedRecipe.getRecipeName());
+    protected void updateDisplay() {
+
+        //create a tableView row for each recipe in the list
+        for (int i = 0; i < recipes.size(); i++) {
+
+            //create a new tableViewRow
+            TableRow newRow = new TableRow(this);
+
+            //set layout parameters for the row
+            TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
+            newRow.setLayoutParams(lp);
+
+            //create a textview for the id
+            TextView id = new TextView(this);
+
+            //set the id text for the row
+            id.setText(recipes.get(i).getRecipeId());
+
+            //add the textview to the row
+            newRow.addView(id);
+
+            //add the new row to the table
+            recipeTableView.addView(newRow, i);
+        }
+
     }
 
-    /* Gets a recipe from the Yummly database */
+    /* Gets a list of recipes from the Yummly database */
     private void requestRecipes(String uri) {
-
-        //print the uri (debug)
-        //System.out.print(uri);
 
         MyTask task = new MyTask();
         task.execute(uri);
+
         //task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, "Param1", "Param2", "Param3");
-
         //String content = YummlyConnection.getData(uri);
-
-        //show the results as popup
-        //Toast.makeText(this, content, Toast.LENGTH_LONG).show();
     }
 
+    /* gets a specific recipe by its id */
     private void requestRecipeById(String id) {
         MyTask task = new MyTask();
         task.execute("http://api.yummly.com/v1/api/" + id + "?_app_id=" + ID + "&_app_key=" + KEY + "&q=onion+soup&requirePictures=true");
@@ -96,7 +122,6 @@ public class resultActivity extends ActionBarActivity {
 
         @Override
         protected void onPreExecute() {
-            //updateDisplay("Starting Task");
 
             //if (tasks.size() == 0) {
                 //pb.setVisibility(View.VISIBLE);
@@ -113,12 +138,10 @@ public class resultActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(String result) {
 
-            //String recipeString = RecipeParser.getRecipeArray(result);
-            //recipes = RecipeParser.parseFeed(recipeString);
+            String recipeString = RecipeParser.getRecipeArray(result);
+            recipes = RecipeParser.parseFeed(recipeString);
 
-            //Recipe selectedRecipe = selectRandomRecipe(recipes);
-
-            //updateDisplay(selectedRecipe);
+            updateDisplay();
 
             tasks.remove(this);
             //if(tasks.size() == 0) {

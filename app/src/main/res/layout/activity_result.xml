@@ -37,22 +37,18 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/recipeNameTextView"
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="415dp"
+        android:id="@+id/scrollView2"
         android:layout_below="@+id/textView2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp" />
+        android:layout_marginTop="25dp" >
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/recipeImageView"
-        android:layout_below="@+id/recipeNameTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/recipeTableView"></TableLayout>
+    </ScrollView>
 
 </RelativeLayout>
