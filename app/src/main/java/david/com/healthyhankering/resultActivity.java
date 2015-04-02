@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -87,14 +88,17 @@ public class resultActivity extends ActionBarActivity {
             TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
             newRow.setLayoutParams(lp);
 
-            //create a textview for the id
-            TextView id = new TextView(this);
+            //create imageview for the recipe row
+            ImageView pic = new ImageView(this);
+            pic.setImageBitmap(recipes.get(i).getBitmap());
 
-            //set the id text for the row
-            id.setText(recipes.get(i).getRecipeId());
+            //create a textview and set text for the row
+            TextView recipeName = new TextView(this);
+            recipeName.setText(recipes.get(i).getRecipeName());
 
-            //add the textview to the row
-            newRow.addView(id);
+            //add the textview and the image to the row
+            newRow.addView(pic);
+            newRow.addView(recipeName);
 
             //add the new row to the table
             recipeTableView.addView(newRow, i);
