@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="david.com.healthyhankering.resultActivity">
+    tools:context="david.com.healthyhankering.resultActivity"
+    android:id="@+id/recipeNameText">
 
     <ImageView
         android:layout_width="fill_parent"
@@ -15,43 +16,43 @@
         android:src="@drawable/fruit"
         android:scaleType="centerCrop" />
 
-    <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_alignParentTop="true"
-        android:id="@+id/frameLayout">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:text="@string/resultLabel"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_centerHorizontal="true" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|top"
-            android:text="@string/resultLabel"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@android:color/white" />
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:onClick="openPreference1"
+        android:text="@string/reset"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
-        <Button
-            android:id="@+id/reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal|bottom"
-            android:onClick="openPreference1"
-            android:text="@string/reset" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/recipeNameTextView"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="375dp"
-            android:text="text: "
-            android:id="@+id/textView"
-            android:layout_gravity="top"
-            android:layout_marginTop="50dp" />
-
-        <ProgressBar
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/progressBar"
-            android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="50dp" />
-    </FrameLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/recipeImageView"
+        android:layout_below="@+id/recipeNameTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
 
 </RelativeLayout>

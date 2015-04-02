@@ -1,0 +1,61 @@
+package david.com.healthyhankering;
+
+/**
+ * Created by dbkegley on 4/1/15.
+ */
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class RecipeParser {
+
+    /* creates a list of recipe POJOs from the JSON response of recipe matches */
+    public static List<Recipe> parseFeed(String content) {
+
+        try {
+
+            JSONArray ar = new JSONArray(content);
+            List<Recipe> recipeList = new ArrayList<>();
+
+            for (int i = 0; i < ar.length(); i++) {
+                JSONObject obj = ar.getJSONObject(i);
+                Recipe recipe = new Recipe();
+
+                //set recipe attributes
+                recipe.setRecipeId(obj.getString("id"));
+                //recipe.setRecipeName(obj.getString("recipeName"));
+                //recipe.setImageURL(obj.getString(""));
+
+                recipeList.add(recipe);
+            }
+
+            return recipeList;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+
+        }
+
+    }
+
+    /*get the array of matching recipes from the JSON response */
+    public static String getRecipeArray(String content) {
+
+        try {
+            JSONObject response = new JSONObject(content);
+            String matches = response.getString("matches");
+
+            return matches;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+}

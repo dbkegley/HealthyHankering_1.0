@@ -4,11 +4,10 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ProgressBar;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -19,8 +18,10 @@ public class resultActivity extends ActionBarActivity {
     private final String KEY = "db97c8d9e96c47c830e44e14d611d50e";
     private final String ID = "9cff8a56";
 
-    TextView output;
-    ProgressBar pb;
+    //ScrollView scrollView;
+    ImageView recipeImageView;
+    TextView recipeNameTextView;
+    List<Recipe> recipes;
     List<MyTask> tasks;
 
     @Override
@@ -28,17 +29,15 @@ public class resultActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        //initialize textview for scrolling
-        output = (TextView) findViewById(R.id.textView);
-        output.setMovementMethod(new ScrollingMovementMethod());
+        //scrollView = (ScrollView) findViewById(R.id.scrollView);
+        //scrollView.setMovementMethod(new ScrollingMovementMethod());
 
-        pb = (ProgressBar) findViewById(R.id.progressBar);
-        pb.setVisibility(View.INVISIBLE);
+        recipeImageView = (ImageView) findViewById(R.id.recipeImageView);
+        recipeNameTextView = (TextView) findViewById(R.id.recipeNameTextView);
 
         tasks = new ArrayList<>();
 
-
-        requestRecipe("http://api.yummly.com/v1/api/recipes?_app_id=" + ID + "&_app_key=" + KEY + "&q=onion+soup&requirePictures=true");
+        requestRecipes("http://api.yummly.com/v1/api/recipes?_app_id=" + ID + "&_app_key=" + KEY + "&q=onion+soup&requirePictures=true");
     }
 
     @Override
@@ -68,12 +67,12 @@ public class resultActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
-    protected void updateDisplay(String message) {
-        output.append(message + "\n");
+    protected void updateDisplay(Recipe selectedRecipe) {
+        recipeNameTextView.setText(selectedRecipe.getRecipeName());
     }
 
     /* Gets a recipe from the Yummly database */
-    private void requestRecipe(String uri) {
+    private void requestRecipes(String uri) {
 
         //print the uri (debug)
         //System.out.print(uri);
@@ -88,15 +87,20 @@ public class resultActivity extends ActionBarActivity {
         //Toast.makeText(this, content, Toast.LENGTH_LONG).show();
     }
 
+    private void requestRecipeById(String id) {
+        MyTask task = new MyTask();
+        task.execute("http://api.yummly.com/v1/api/" + id + "?_app_id=" + ID + "&_app_key=" + KEY + "&q=onion+soup&requirePictures=true");
+    }
+
     private class MyTask extends AsyncTask<String, String, String> {
 
         @Override
         protected void onPreExecute() {
-            updateDisplay("Starting Task");
+            //updateDisplay("Starting Task");
 
-            if (tasks.size() == 0) {
-                pb.setVisibility(View.VISIBLE);
-            }
+            //if (tasks.size() == 0) {
+                //pb.setVisibility(View.VISIBLE);
+            //}
             tasks.add(this);
         }
 
@@ -108,12 +112,18 @@ public class resultActivity extends ActionBarActivity {
 
         @Override
         protected void onPostExecute(String result) {
-            updateDisplay(result);
+
+            //String recipeString = RecipeParser.getRecipeArray(result);
+            //recipes = RecipeParser.parseFeed(recipeString);
+
+            //Recipe selectedRecipe = selectRandomRecipe(recipes);
+
+            //updateDisplay(selectedRecipe);
 
             tasks.remove(this);
-            if(tasks.size() == 0) {
-                pb.setVisibility(View.INVISIBLE);
-            }
+            //if(tasks.size() == 0) {
+                //pb.setVisibility(View.INVISIBLE);
+            //}
         }
     }
 }
