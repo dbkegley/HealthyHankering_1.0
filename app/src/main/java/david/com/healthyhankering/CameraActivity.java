@@ -1,7 +1,10 @@
 package david.com.healthyhankering;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
@@ -9,10 +12,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import java.io.File;
 
 
 public class CameraActivity extends ActionBarActivity {
 
+
+    private static final int REQUEST_CODE = 100;
+    private Uri imageUri;
+    private File image;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +31,27 @@ public class CameraActivity extends ActionBarActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
+        }
+
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        File imagesFolder = new File(Environment.getExternalStorageDirectory(), "HealthyHankerings");
+        imagesFolder.mkdirs();
+        image = new File(imagesFolder, "image.jpg");
+        imageUri = Uri.fromFile(image);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+        startActivityForResult(intent, REQUEST_CODE);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+            Toast.makeText(this, "Image saved to:\n" + imageUri.toString(), Toast.LENGTH_LONG).show();
+        }
+        else if (resultCode == RESULT_CANCELED) {
+        }
+        else {
+            Toast.makeText(this, "Failed to take picture", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -77,4 +108,7 @@ public class CameraActivity extends ActionBarActivity {
             return rootView;
         }
     }
+
+
+
 }
