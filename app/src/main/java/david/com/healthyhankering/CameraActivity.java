@@ -40,7 +40,7 @@ public class CameraActivity extends ActionBarActivity {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File imagesFolder = new File(Environment.getExternalStorageDirectory(), "HealthyHankerings");
         imagesFolder.mkdirs();
-        String random = ((int)(Math.random()*10000)) + "";
+        String random = "img" + ((int)(Math.random()*100000000));
         image = new File(imagesFolder, random + ".jpg");
         imageUri = Uri.fromFile(image);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
