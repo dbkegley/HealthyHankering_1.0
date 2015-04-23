@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -26,17 +27,21 @@ public class CameraActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pedometer);
+        setContentView(R.layout.activity_camera);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
 
+    }
+
+    public void takePicture(View view){
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File imagesFolder = new File(Environment.getExternalStorageDirectory(), "HealthyHankerings");
         imagesFolder.mkdirs();
-        image = new File(imagesFolder, "image.jpg");
+        String random = ((int)(Math.random()*10000)) + "";
+        image = new File(imagesFolder, random + ".jpg");
         imageUri = Uri.fromFile(image);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         startActivityForResult(intent, REQUEST_CODE);
@@ -47,6 +52,8 @@ public class CameraActivity extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {
             Toast.makeText(this, "Image saved to:\n" + imageUri.toString(), Toast.LENGTH_LONG).show();
+            ImageView image = (ImageView) findViewById(R.id.customImage);
+            image.setImageURI(imageUri);
         }
         else if (resultCode == RESULT_CANCELED) {
         }
