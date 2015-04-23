@@ -11,6 +11,98 @@
         android:layout_height="fill_parent"
         android:layout_gravity="center_horizontal|bottom">
 
+      <ScrollView
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_below="@+id/imageView5">
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+
+              <ImageView
+                  android:layout_width="150dp"
+                  android:layout_height="200dp"
+                  android:id="@+id/customImage"
+                  android:src="@drawable/healthy_hankering_logo"
+                  android:layout_below="@+id/imageView5"
+                  android:layout_alignParentLeft="true"
+                  android:layout_alignParentStart="true"
+                  android:layout_alignParentRight="true"
+                  android:layout_alignParentEnd="true"
+                  android:longClickable="false"
+                  android:paddingTop="20dp"
+                  android:layout_gravity="center_horizontal" />
+
+              <Button
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Take Picture"
+                  android:id="@+id/cameraButton"
+                  android:layout_below="@+id/customImage"
+                  android:layout_centerHorizontal="true"
+                  android:onClick="takePicture"
+                  android:layout_gravity="center_horizontal" />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textAppearance="?android:attr/textAppearanceMedium"
+                  android:text="Input Ingredients"
+                  android:id="@+id/customIngredientsLabel"
+                  android:layout_centerHorizontal="true"
+                  android:layout_below="@+id/cameraButton"
+                  android:paddingTop="25dp"
+                  android:layout_gravity="center_horizontal" />
+
+              <EditText
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/editIngredients"
+                  android:layout_below="@+id/customIngredientsLabel"
+                  android:gravity="top|left"
+                  android:inputType="textMultiLine"
+                  android:scrollbars="vertical"
+                  android:layout_alignRight="@+id/addLabel"
+                  android:layout_alignEnd="@+id/addLabel"
+                  android:layout_alignLeft="@+id/addLabel"
+                  android:layout_alignStart="@+id/addLabel" />
+
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textAppearance="?android:attr/textAppearanceMedium"
+                  android:text="Input Recipe"
+                  android:id="@+id/customRecipeLabel"
+                  android:layout_below="@+id/editIngredients"
+                  android:layout_centerHorizontal="true"
+                  android:paddingTop="25dp"
+                  android:layout_gravity="center_horizontal" />
+
+              <EditText
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/editRecipe"
+                  android:layout_below="@+id/customRecipeLabel"
+                  android:gravity="top|left"
+                  android:inputType="textMultiLine"
+                  android:scrollbars="vertical"
+                  android:layout_alignRight="@+id/editIngredients"
+                  android:layout_alignEnd="@+id/editIngredients"
+                  android:layout_alignLeft="@+id/editIngredients"
+                  android:layout_alignStart="@+id/editIngredients" />
+
+              <Button
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Submit Recipe"
+                  android:id="@+id/submitCustom"
+                  android:layout_alignParentBottom="true"
+                  android:layout_centerHorizontal="true"
+                  android:layout_gravity="center_horizontal|bottom" />
+          </LinearLayout>
+      </ScrollView>
+
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -20,18 +112,6 @@
             android:src="@drawable/fruit"
             android:scaleType="centerCrop"
             android:layout_alignBottom="@+id/addSubLabel" />
-
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:id="@+id/customImage"
-            android:src="@drawable/healthy_hankering_logo"
-            android:layout_below="@+id/imageView5"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:longClickable="false" />
 
         <TextView
             android:id="@+id/addSubLabel"
@@ -43,27 +123,8 @@
             android:paddingTop="50dp"
             android:text="@string/addSubLabel"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textAlignment="textStart"
             android:textColor="@android:color/white"
-            android:autoText="false" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Take Picture"
-            android:id="@+id/cameraButton"
-            android:layout_below="@+id/customImage"
-            android:layout_centerHorizontal="true"
-            android:onClick="takePicture" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Submit Recipe"
-            android:id="@+id/submitCustom"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal|bottom" />
+            />
 
         <TextView
             android:id="@+id/addLabel"
@@ -76,44 +137,6 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="18pt"
             android:textColor="#ffffff" />
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/scroll_Ingredients"
-            android:layout_below="@+id/cameraButton"
-            android:layout_alignRight="@+id/scroll_Recipe"
-            android:layout_alignEnd="@+id/scroll_Recipe"
-            android:layout_alignLeft="@+id/scroll_Recipe"
-            android:layout_alignStart="@+id/scroll_Recipe">
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/editIngredients"
-                android:layout_below="@+id/scroll_Recipe"
-                android:layout_centerHorizontal="true" />
-        </ScrollView>
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/scroll_Recipe"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/scroll_Ingredients"
-            android:paddingTop="25dp">
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/editRecipe"
-                android:layout_below="@+id/scroll_Recipe"
-                android:layout_centerHorizontal="true" />
-        </ScrollView>
 
     </RelativeLayout>
 
