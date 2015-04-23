@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name"></string>
+    <string name="app_name">Healthy Hankerings</string>
     <string name="home_title">Healthy Hankerings</string>
     <string name="sub_home_note">Click The Logo To Start</string>
-    <string name="pedometer">Pedometer</string>
+    <string name="pedometer">Custom Recipe</string>
     <string name="gps">GPS</string>
     <string name="home">Home</string>
     <string name="title_activity_preference1"></string>
@@ -13,7 +13,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_preference3"></string>
     <string name="title_activity_gps">GPSActivity</string>
-    <string name="title_activity_pedometer">PedometerActivity</string>
+    <string name="title_activity_pedometer"></string>
     <string name="next">Next</string>
     <string name="submit">What am I Hankering?</string>
     <string name="textureLabel">Texture</string>
