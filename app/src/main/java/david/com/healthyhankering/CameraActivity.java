@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -45,6 +46,20 @@ public class CameraActivity extends ActionBarActivity {
         imageUri = Uri.fromFile(image);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
         startActivityForResult(intent, REQUEST_CODE);
+
+    }
+
+    public void submitCustomRecipe(View view) {
+        Toast.makeText(this, "Recipe Added to Local Database", Toast.LENGTH_LONG).show();
+        ImageView image = (ImageView) findViewById(R.id.customImage);
+        EditText recipe = (EditText) findViewById(R.id.editRecipe);
+        EditText ingredients = (EditText) findViewById(R.id.editIngredients);
+
+
+        //Restore Page to default screen
+        image.setImageResource(R.drawable.healthy_hankering_logo);
+        recipe.setText("");
+        ingredients.setText("");
 
     }
 

@@ -99,7 +99,8 @@
                   android:id="@+id/submitCustom"
                   android:layout_alignParentBottom="true"
                   android:layout_centerHorizontal="true"
-                  android:layout_gravity="center_horizontal|bottom" />
+                  android:layout_gravity="center_horizontal|bottom"
+                  android:onClick="submitCustomRecipe" />
           </LinearLayout>
       </ScrollView>
 
