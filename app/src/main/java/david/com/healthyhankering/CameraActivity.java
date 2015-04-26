@@ -54,12 +54,14 @@ public class CameraActivity extends ActionBarActivity {
         ImageView image = (ImageView) findViewById(R.id.customImage);
         EditText recipe = (EditText) findViewById(R.id.editRecipe);
         EditText ingredients = (EditText) findViewById(R.id.editIngredients);
+        EditText name = (EditText) findViewById(R.id.editCustomName);
 
 
         //Restore Page to default screen
         image.setImageResource(R.drawable.healthy_hankering_logo);
         recipe.setText("");
         ingredients.setText("");
+        name.setText("");
 
     }
 
