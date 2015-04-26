@@ -104,7 +104,7 @@ public class CameraActivity extends ActionBarActivity {
             this.finish();
 
             //start gps intent
-            Intent intent = new Intent(this, GPSActivity.class);
+            Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.item_pedometer) {

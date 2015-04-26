@@ -62,7 +62,6 @@
     <string name="resultLabel">Your Current Hankering Is..</string>
     <string name="recipeName">Recipe Name</string>
     <string name="reset">Find Another Hankering?</string>
-
     <string name="title_activity_cuisine"></string>
     <string name="cuisineLabel">Cuisine</string>
     <string name="subCuisineLabel">Select A Cuisine</string>
@@ -91,31 +90,8 @@
     <string name="Hawaiian">Hawaiian</string>
     <string name="Portuguese">Portuguese</string>
     <string name="Hungarian">Hungarian</string>
-
     <string name="addLabel">Custom Recipe</string>
     <string name="addSubLabel">Add Your Personal Recipe</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="title_activity_maps">Map</string>
 
 </resources>

@@ -9,6 +9,13 @@
         <dex dex="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-f22069a05c4066301126c2b71ffbdcb4876d9a0f.jar" />
     </item>
     <item
+        jar="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-7742ab10bf18af0ccf8be16991b1ae838daedfb0.jar" />
+    </item>
+    <item
         jar="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -16,18 +23,18 @@
         <dex dex="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/pre-dexed/debug/classes-8491d3f6d10095f8ba6b363fc44d04c7ef3d63fe.jar" />
     </item>
     <item
+        jar="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/pre-dexed/debug/classes-ae4412d8a9cc4810f7ed6742a46cd48abbfd660c.jar" />
+    </item>
+    <item
         jar="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex dex="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/pre-dexed/debug/classes-1f8cfdbda233d6d096541498389035a9376c6c39.jar" />
-    </item>
-    <item
-        jar="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/dbkegley/Documents/CS480/HealthyHankering_1.0/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-7742ab10bf18af0ccf8be16991b1ae838daedfb0.jar" />
     </item>
 
 </items>

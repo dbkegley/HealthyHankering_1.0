@@ -17,7 +17,6 @@ public class HomeActivity extends ActionBarActivity {
         setContentView(R.layout.activity_home);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -39,8 +38,8 @@ public class HomeActivity extends ActionBarActivity {
             startActivity(intent);
             return true;
         } else if (id == R.id.item_gps) {
-            //start gps intent
-            Intent intent = new Intent(this, GPSActivity.class);
+            //start map intent
+            Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.item_pedometer) {
@@ -52,8 +51,6 @@ public class HomeActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
     public void openPreference1(View view) {
         Intent intent = new Intent(this, TasteActivity.class);
