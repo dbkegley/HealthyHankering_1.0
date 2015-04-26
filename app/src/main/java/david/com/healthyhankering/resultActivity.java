@@ -44,9 +44,69 @@ public class resultActivity extends ActionBarActivity {
         String spice = sharedPref.getString("SPICE", "");
         String cuisine = sharedPref.getString("CUISINE", "");
 
+        //Get Spice range
+        String spiceMin = "";
+        String spiceMax = "";
+        if(spice.equalsIgnoreCase("Mild")) {
+            spiceMin = "0";
+            spiceMax = "0.2";
+        }
+        else if(spice.equalsIgnoreCase("Medium")) {
+            spiceMin = "0.3";
+            spiceMax = "0.6";
+        }
+        else {
+            spiceMin = "0.6";
+            spiceMax = "1";
+        }
+
+        //Get Flavor Range
+        String sweetMin = "0";
+        String sweetMax = "0.5";
+        String savouryMin = "0";
+        String savouryMax = "0.5";
+        String sourMin = "0";
+        String sourMax = "0.5";
+        String saltyMin = "0";
+        String saltyMax = "0.5";
+        String bitterMin = "0";
+        String bitterMax = "0.5";
+
+        if(taste.equalsIgnoreCase("Sweet")){
+            sweetMin = "0.5";
+            sweetMax = "1";
+        }
+        if(taste.equalsIgnoreCase("Bitter")){
+            bitterMin = "0.5";
+            bitterMax = "1";
+        }
+        if(taste.equalsIgnoreCase("Savoury")){
+            savouryMin = "0.5";
+            savouryMax = "1";
+        }
+        if(taste.equalsIgnoreCase("Salty")){
+            saltyMin = "0.5";
+            saltyMax = "1";
+        }
+        if(taste.equalsIgnoreCase("Sour")){
+            sourMin = "0.5";
+            sourMax = "1";
+        }
+
+
         //request all recipes that meet the specifications
-        requestRecipes("http://api.yummly.com/v1/api/recipes?_app_id=" + ID + "&_app_key=" + KEY + "&q=" + taste +
-                "+" + spice + "+" + cuisine + "&requirePictures=true");
+        //requestRecipes("http://api.yummly.com/v1/api/recipes?_app_id=" + ID + "&_app_key=" + KEY + "&q=" + taste +
+         //       "+" + spice + "+" + cuisine + "&requirePictures=true");
+
+        requestRecipes("http://api.yummly.com/v1/api/recipes?_app_id=" + ID + "&_app_key=" + KEY +"&q=" + cuisine +
+        "&flavor.sweet.min=" + sweetMin + "&flavor.sweet.max=" + sweetMax + "&flavor.bitter.min="+
+                bitterMin + "&flavor.bitter.max=" + bitterMax + "&flavor.meaty.min=" + savouryMin
+                + "&flavor.meaty.max=" + savouryMax + "&flavor.salty.min=" + saltyMin +
+                "&flavor.salty.max=" + saltyMax + "&flavor.sour.min=" + sourMin +
+                "&flavor.sour.max=" + sourMax +
+                "&flavor.piquant.min=" + spiceMin + "&flavor.piquant.max=" + spiceMax + "&requirePictures=true");
+
+
     }
 
     @Override
