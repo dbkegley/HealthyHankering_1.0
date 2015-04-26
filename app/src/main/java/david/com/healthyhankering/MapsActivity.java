@@ -6,19 +6,20 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements LocationListener {
+public class MapsActivity extends FragmentActivity implements LocationListener, LocationSource {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
+    private LocationManager locationManager;
+    private OnLocationChangedListener mListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,8 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
         mMap = supportMapFragment.getMap();
         mMap.setMyLocationEnabled(true);
-        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         Criteria criteria = new Criteria();
 
         String bestProvider = locationManager.getBestProvider(criteria, true);
@@ -50,19 +52,32 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
         locationManager.requestLocationUpdates(bestProvider, 20000, 0, this);
 
         //search nearby grocery stores.
+        //Uri gmmIntentUri = Uri.parse("geo:" + latitude + "," + longitude + "?q=grocery");
 
     }
 
     @Override
     public void onLocationChanged(Location location) {
+
+        if( mListener != null )
+        {
+            mListener.onLocationChanged( location );
+
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
+        }
+
+        /*
         TextView locationTv = (TextView) findViewById(R.id.latlongLocation);
         double latitude = location.getLatitude();
         double longitude = location.getLongitude();
         LatLng latLng = new LatLng(latitude, longitude);
+
         mMap.addMarker(new MarkerOptions().position(latLng));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
+
         locationTv.setText("Latitude:" + latitude + ", Longitude:" + longitude);
+        */
     }
 
     private boolean isGooglePlayServicesAvailable() {
@@ -77,9 +92,27 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
 
     @Override
-    protected void onResume() {
+    public void onPause()
+    {
+        if(locationManager != null)
+        {
+            locationManager.removeUpdates(this);
+        }
+
+        super.onPause();
+    }
+
+    @Override
+    public void onResume()
+    {
         super.onResume();
-        //setUpMapIfNeeded();
+
+        setUpMapIfNeeded();
+
+        if(locationManager != null)
+        {
+            mMap.setMyLocationEnabled(true);
+        }
     }
 
     @Override
@@ -122,6 +155,9 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
             if (mMap != null) {
                 setUpMap();
             }
+
+            //this is how you set up the location source
+            mMap.setLocationSource(this);
         }
     }
 
@@ -133,5 +169,18 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
      */
     private void setUpMap() {
         //mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+        mMap.setMyLocationEnabled(true);
+    }
+
+    @Override
+    public void activate(OnLocationChangedListener listener)
+    {
+        mListener = listener;
+    }
+
+    @Override
+    public void deactivate()
+    {
+        mListener = null;
     }
 }

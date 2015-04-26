@@ -39,6 +39,23 @@ public class HomeActivity extends ActionBarActivity {
             return true;
         } else if (id == R.id.item_gps) {
             //start map intent
+
+            //LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+            //Criteria criteria = new Criteria();
+
+            //String bestProvider = locationManager.getBestProvider(criteria, true);
+            //Location location = locationManager.getLastKnownLocation(bestProvider);
+
+            //double latitude = location.getLatitude();
+            //double longitude = location.getLongitude();
+
+            //Uri gmmIntentUri = Uri.parse("geo:" + "0" + "," + "0" + "?q=restaurants");
+
+            //Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            //mapIntent.setPackage("com.google.android.apps.maps");
+
+            //startActivity(mapIntent);
+
             Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
             return true;
