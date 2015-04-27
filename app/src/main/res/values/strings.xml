@@ -93,5 +93,9 @@
     <string name="addLabel">Custom Recipe</string>
     <string name="addSubLabel">Add Your Personal Recipe</string>
     <string name="title_activity_maps">Map</string>
+    <string name="camera">camera</string>
+    <string name="Recipe">Recipe</string>
+    <string name="recipe">Recipe</string>
+    <string name="ing">Ingredients</string>
 
 </resources>

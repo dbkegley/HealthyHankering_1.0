@@ -109,7 +109,7 @@ public class CameraActivity extends ActionBarActivity {
             Intent intent = new Intent(this, MapsActivity.class);
             startActivity(intent);
             return true;
-        } else if (id == R.id.item_pedometer) {
+        } else if (id == R.id.item_camera) {
             //do nothing, already on this page
             return true;
         }

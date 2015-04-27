@@ -4,16 +4,12 @@ package david.com.healthyhankering;
  * Created by dbkegley on 4/1/15.
  */
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,17 +44,15 @@ public class RecipeParser {
 
 
                 recipe.setImageURL(url);
-
+/*
                 try {
                     String imageURL = recipe.getImageURL();
-                    InputStream in = (InputStream) new URL(imageURL).getContent();
-                    Bitmap bitmap = BitmapFactory.decodeStream(in);
+                    Bitmap bitmap = getBitmapFromURL(imageURL);
                     recipe.setBitmap(bitmap);
-                    in.close();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
+*/
                 recipeList.add(recipe);
             }
 
