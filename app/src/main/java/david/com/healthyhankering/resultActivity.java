@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,9 +32,6 @@ public class resultActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
-        //instantiate tableview by id
-        recipeTableView = (TableLayout) findViewById(R.id.recipeTableView);
 
         //instantiate tasks and recipe lists as empty arraylists
         tasks = new ArrayList<>();
@@ -142,28 +141,21 @@ public class resultActivity extends ActionBarActivity {
         //create a tableView row for each recipe in the list
         //for (int i = 0; i < recipes.size(); i++) {
 
-            //create a new tableViewRow
-            TableRow newRow = new TableRow(this);
 
-            //set layout parameters for the row
-            TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT);
-            newRow.setLayoutParams(lp);
+        //Recipe image
+        ImageView pic = (ImageView) findViewById(R.id.resultImage);
+        pic.setImageBitmap(recipes.get(i).getBitmap());
 
-            //create imageview for the recipe row
-            ImageView pic = new ImageView(this);
-            pic.setImageBitmap(recipes.get(i).getBitmap());
+        //Recipe name
+        TextView resultName = (TextView) findViewById(R.id.resultName);
+        resultName.setText(recipes.get(i).getRecipeName());
 
-            //create a textview and set text for the row
-            TextView recipeName = new TextView(this);
-            recipeName.setText(recipes.get(i).getRecipeName());
-
-            //add the textview and the image to the row
-            newRow.addView(pic);
-            newRow.addView(recipeName);
-
-            //add the new row to the table
-            recipeTableView.addView(newRow, i);
-       // }
+        //Recipe link
+        TextView link = (TextView) findViewById(R.id.hyperlink);
+        link.setClickable(true);
+        link.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "<a href='www.yummly.com/recipe/" + recipes.get(i).getRecipeId() + "'> View Recipe </a>";
+        link.setText(Html.fromHtml(text));
 
     }
 
