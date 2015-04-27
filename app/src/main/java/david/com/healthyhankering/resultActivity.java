@@ -3,6 +3,7 @@ package david.com.healthyhankering;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -13,8 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
+import android.graphics.Bitmap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -138,9 +139,6 @@ public class resultActivity extends ActionBarActivity {
     protected void updateDisplay() {
 
         int i = (int)Math.random()*recipes.size();
-        //create a tableView row for each recipe in the list
-        //for (int i = 0; i < recipes.size(); i++) {
-
 
         //Recipe image
         ImageView pic = (ImageView) findViewById(R.id.resultImage);
@@ -154,7 +152,7 @@ public class resultActivity extends ActionBarActivity {
         TextView link = (TextView) findViewById(R.id.hyperlink);
         link.setClickable(true);
         link.setMovementMethod(LinkMovementMethod.getInstance());
-        String text = "<a href='www.yummly.com/recipe/" + recipes.get(i).getRecipeId() + "'> View Recipe </a>";
+        String text = "<a href='http://www.yummly.com/recipe/" + recipes.get(i).getRecipeId() + "'> View Recipe </a>";
         link.setText(Html.fromHtml(text));
 
     }
@@ -206,4 +204,6 @@ public class resultActivity extends ActionBarActivity {
             //}
         }
     }
+
+
 }
