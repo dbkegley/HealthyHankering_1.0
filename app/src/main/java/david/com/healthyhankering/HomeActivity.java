@@ -1,6 +1,10 @@
 package david.com.healthyhankering;
 
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -38,26 +42,28 @@ public class HomeActivity extends ActionBarActivity {
             startActivity(intent);
             return true;
         } else if (id == R.id.item_gps) {
+
             //start map intent
+            LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+            Criteria criteria = new Criteria();
 
-            //LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-            //Criteria criteria = new Criteria();
+            String bestProvider = locationManager.getBestProvider(criteria, true);
+            Location location = locationManager.getLastKnownLocation(bestProvider);
 
-            //String bestProvider = locationManager.getBestProvider(criteria, true);
-            //Location location = locationManager.getLastKnownLocation(bestProvider);
+            if (location != null) {
+                double latitude = location.getLatitude();
+                double longitude = location.getLongitude();
 
-            //double latitude = location.getLatitude();
-            //double longitude = location.getLongitude();
+                Uri gmmIntentUri = Uri.parse("geo:" + latitude + "," + longitude + "?q=grocery");
 
-            //Uri gmmIntentUri = Uri.parse("geo:" + "0" + "," + "0" + "?q=restaurants");
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
 
-            //Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-            //mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
 
-            //startActivity(mapIntent);
-
-            Intent intent = new Intent(this, MapsActivity.class);
-            startActivity(intent);
+            //Intent intent = new Intent(this, MapsActivity.class);
+            //startActivity(intent);
             return true;
         } else if (id == R.id.item_pedometer) {
             //start pedometer intent

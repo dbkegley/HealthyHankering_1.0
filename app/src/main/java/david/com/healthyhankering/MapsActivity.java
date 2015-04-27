@@ -6,16 +6,19 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.LocationSource;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements LocationListener, LocationSource {
+public class MapsActivity extends FragmentActivity implements LocationListener, LocationSource, OnMapReadyCallback {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     private LocationManager locationManager;
@@ -62,11 +65,9 @@ public class MapsActivity extends FragmentActivity implements LocationListener, 
         if( mListener != null )
         {
             mListener.onLocationChanged( location );
-
             mMap.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude())));
         }
 
-        /*
         TextView locationTv = (TextView) findViewById(R.id.latlongLocation);
         double latitude = location.getLatitude();
         double longitude = location.getLongitude();
@@ -77,7 +78,6 @@ public class MapsActivity extends FragmentActivity implements LocationListener, 
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
         locationTv.setText("Latitude:" + latitude + ", Longitude:" + longitude);
-        */
     }
 
     private boolean isGooglePlayServicesAvailable() {
@@ -182,5 +182,12 @@ public class MapsActivity extends FragmentActivity implements LocationListener, 
     public void deactivate()
     {
         mListener = null;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        googleMap.addMarker(new MarkerOptions()
+                .position(new LatLng(0, 0))
+                .title("Marker"));
     }
 }
