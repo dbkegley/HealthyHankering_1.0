@@ -45,10 +45,37 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="25dp" >
 
-        <TableLayout
+        <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/recipeTableView"></TableLayout>
+            android:id="@+id/resultLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/resultName"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/resultImage"
+                android:layout_alignTop="@+id/scrollView2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/hyperlink"
+                android:layout_alignTop="@+id/scrollView2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="111dp"
+                android:text="Go to Recipe Online" />
+        </RelativeLayout>
     </ScrollView>
 
 </RelativeLayout>
