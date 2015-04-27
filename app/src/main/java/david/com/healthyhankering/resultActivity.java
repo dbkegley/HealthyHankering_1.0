@@ -138,8 +138,9 @@ public class resultActivity extends ActionBarActivity {
 
     protected void updateDisplay() {
 
+        int i = (int)Math.random()*recipes.size();
         //create a tableView row for each recipe in the list
-        for (int i = 0; i < recipes.size(); i++) {
+        //for (int i = 0; i < recipes.size(); i++) {
 
             //create a new tableViewRow
             TableRow newRow = new TableRow(this);
@@ -162,7 +163,7 @@ public class resultActivity extends ActionBarActivity {
 
             //add the new row to the table
             recipeTableView.addView(newRow, i);
-        }
+       // }
 
     }
 
