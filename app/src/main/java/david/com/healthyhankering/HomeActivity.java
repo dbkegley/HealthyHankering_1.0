@@ -65,14 +65,19 @@ public class HomeActivity extends ActionBarActivity {
             //Intent intent = new Intent(this, MapsActivity.class);
             //startActivity(intent);
             return true;
-        } else if (id == R.id.item_pedometer) {
+        } else if (id == R.id.item_camera) {
             //start pedometer intent
             Intent intent = new Intent(this, CameraActivity.class);
             startActivity(intent);
             return true;
+        } else if (id == R.id.item_home) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+            return true;
         }
 
-        return super.onOptionsItemSelected(item);
+
+            return super.onOptionsItemSelected(item);
     }
 
     public void openPreference1(View view) {

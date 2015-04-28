@@ -3,8 +3,12 @@ package david.com.healthyhankering;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -39,6 +43,42 @@ public class CuisineActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            //start activity intent
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item_gps) {
+
+            //start map intent
+            LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+            Criteria criteria = new Criteria();
+
+            String bestProvider = locationManager.getBestProvider(criteria, true);
+            Location location = locationManager.getLastKnownLocation(bestProvider);
+
+            if (location != null) {
+                double latitude = location.getLatitude();
+                double longitude = location.getLongitude();
+
+                Uri gmmIntentUri = Uri.parse("geo:" + latitude + "," + longitude + "?q=grocery");
+
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+
+                startActivity(mapIntent);
+            }
+
+            //Intent intent = new Intent(this, MapsActivity.class);
+            //startActivity(intent);
+            return true;
+        } else if (id == R.id.item_camera) {
+            //start pedometer intent
+            Intent intent = new Intent(this, CameraActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item_home) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
             return true;
         }
 

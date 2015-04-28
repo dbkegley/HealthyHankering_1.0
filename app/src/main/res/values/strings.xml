@@ -97,5 +97,6 @@
     <string name="Recipe">Recipe</string>
     <string name="recipe">Recipe</string>
     <string name="ing">Ingredients</string>
+    <string name="grocery">Grocery Store Finder</string>
 
 </resources>

@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -128,6 +132,42 @@ public class resultActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            //start activity intent
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item_gps) {
+
+            //start map intent
+            LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+            Criteria criteria = new Criteria();
+
+            String bestProvider = locationManager.getBestProvider(criteria, true);
+            Location location = locationManager.getLastKnownLocation(bestProvider);
+
+            if (location != null) {
+                double latitude = location.getLatitude();
+                double longitude = location.getLongitude();
+
+                Uri gmmIntentUri = Uri.parse("geo:" + latitude + "," + longitude + "?q=grocery");
+
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+
+                startActivity(mapIntent);
+            }
+
+            //Intent intent = new Intent(this, MapsActivity.class);
+            //startActivity(intent);
+            return true;
+        } else if (id == R.id.item_camera) {
+            //start pedometer intent
+            Intent intent = new Intent(this, CameraActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item_home) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -141,7 +181,7 @@ public class resultActivity extends ActionBarActivity {
 
     protected void updateDisplay() {
 
-        int i = (int)Math.random()*recipes.size();
+        int i = (int)(Math.random()*recipes.size());
         //Recipe image
         ImageView pic = (ImageView) findViewById(R.id.resultImage);
         new ImageLoadTask(recipes.get(i).getImageURL(),pic).execute();

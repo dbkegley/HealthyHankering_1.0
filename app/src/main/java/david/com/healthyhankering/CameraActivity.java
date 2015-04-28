@@ -1,6 +1,9 @@
 package david.com.healthyhankering;
 
 import android.content.Intent;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -96,21 +99,42 @@ public class CameraActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            //close this page
-            this.finish();
-
-            //only page left on stack is 'Home'
-            return true;
-        } else if (id == R.id.item_gps) {
-            //close this page and open gps
-            this.finish();
-
-            //start gps intent
-            Intent intent = new Intent(this, MapsActivity.class);
+            //start activity intent
+            Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
             return true;
+        } else if (id == R.id.item_gps) {
+
+            //start map intent
+            LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+            Criteria criteria = new Criteria();
+
+            String bestProvider = locationManager.getBestProvider(criteria, true);
+            Location location = locationManager.getLastKnownLocation(bestProvider);
+
+            if (location != null) {
+                double latitude = location.getLatitude();
+                double longitude = location.getLongitude();
+
+                Uri gmmIntentUri = Uri.parse("geo:" + latitude + "," + longitude + "?q=grocery");
+
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+
+                startActivity(mapIntent);
+            }
+
+            //Intent intent = new Intent(this, MapsActivity.class);
+            //startActivity(intent);
+            return true;
         } else if (id == R.id.item_camera) {
-            //do nothing, already on this page
+            //start pedometer intent
+            Intent intent = new Intent(this, CameraActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.item_home) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
             return true;
         }
 

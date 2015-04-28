@@ -4,4 +4,10 @@
     tools:context="david.com.healthyhankering.resultActivity">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/item_home" android:title="@string/home"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/item_gps" android:title="@string/grocery"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/item_camera" android:title="@string/camera"
+        android:orderInCategory="100" app:showAsAction="never" />
 </menu>
