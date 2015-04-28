@@ -18,8 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -32,7 +32,6 @@ public class resultActivity extends ActionBarActivity {
     private final String KEY = "db97c8d9e96c47c830e44e14d611d50e";
     private final String ID = "9cff8a56";
 
-    TableLayout recipeTableView;
     List<Recipe> recipes;
     List<MyTask> tasks;
 
@@ -180,22 +179,34 @@ public class resultActivity extends ActionBarActivity {
     }
 
     protected void updateDisplay() {
+        if(recipes.size() != 0) {
+            int i = (int) (Math.random() * recipes.size());
+            //Recipe image
+            ImageView pic = (ImageView) findViewById(R.id.resultImage);
+            new ImageLoadTask(recipes.get(i).getImageURL(), pic).execute();
 
-        int i = (int)(Math.random()*recipes.size());
-        //Recipe image
-        ImageView pic = (ImageView) findViewById(R.id.resultImage);
-        new ImageLoadTask(recipes.get(i).getImageURL(),pic).execute();
+            //Recipe name
+            TextView resultName = (TextView) findViewById(R.id.resultName);
+            resultName.setText(recipes.get(i).getRecipeName());
 
-        //Recipe name
-        TextView resultName = (TextView) findViewById(R.id.resultName);
-        resultName.setText(recipes.get(i).getRecipeName());
+            //Recipe link
+            TextView link = (TextView) findViewById(R.id.hyperlink);
+            link.setClickable(true);
+            link.setMovementMethod(LinkMovementMethod.getInstance());
+            String text = "<a href='http://www.yummly.com/recipe/" + recipes.get(i).getRecipeId() + "'> View Recipe </a>";
+            link.setText(Html.fromHtml(text));
+        }
+        else
+        {
+            Context context = getApplicationContext();
+            CharSequence text = "No Results!";
+            int duration = Toast.LENGTH_SHORT;
 
-        //Recipe link
-        TextView link = (TextView) findViewById(R.id.hyperlink);
-        link.setClickable(true);
-        link.setMovementMethod(LinkMovementMethod.getInstance());
-        String text = "<a href='http://www.yummly.com/recipe/" + recipes.get(i).getRecipeId() + "'> View Recipe </a>";
-        link.setText(Html.fromHtml(text));
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+            finish();
+
+        }
 
     }
 
